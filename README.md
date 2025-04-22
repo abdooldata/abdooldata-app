@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>AbdoolData App</title>
-  <link rel="icon" href="logo.png" type="image/png">
+  <link rel="icon" href="logo.png" type="image/png"/>
   <style>
     /* Global Styles */
     body {
@@ -85,20 +85,22 @@
   </footer>
 
   <script>
-    document.getElementById('signup-form').addEventListener('submit', function (e) {
-      e.preventDefault(); // Prevent form submission
-      
-      const email = document.getElementById('email').value;
-      const password = document.getElementById('password').value;
-
-      // Here you can add the code for handling form submission
-      console.log('Email:', email);
-      console.log('Password:', password);
-      
-      // You can add a success message or redirect the user after successful submission
-      alert('Registration successful!');
+    document.addEventListener('DOMContentLoaded', function () {
+      const form = document.getElementById('signup-form');
+      if (form) {
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+          const email = document.getElementById('email').value;
+          const password = document.getElementById('password').value;
+          console.log('Email:', email);
+          console.log('Password:', password);
+          alert('Registration successful!');
+        });
+      } else {
+        console.error('Form not found!');
+      }
     });
   </script>
-  
+
 </body>
 </html>
